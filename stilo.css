@@ -1,0 +1,1227 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    /*overflow: hidden;*/
+    overflow-x: hidden;
+}
+
+/*MODIFICADORES*/
+.margen{
+        margin-left: 4vw;
+}
+.botonGeneral{
+    width: 60px;
+  height: 60px;
+  background-color: #A20012; /* rojo */
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.9);
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+}
+.botonGeneral::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.botonGeneral:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.animar {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.displayNone{
+    display: none;
+}
+
+.opacity{
+    opacity: 0%;
+    transition: opacity 0.1s;
+}
+.aparecer{
+    opacity: 100%;
+    transition: opacity 0.6s;
+}
+
+.punto_seleccionado{
+    background-color: #A20012;
+    border-radius: 50%;
+    width: 1.25vw;
+    height: 2.5vh;
+    list-style: none;
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+.blur{
+    filter: blur(0.8px);
+}
+
+.padding-top{
+    padding-top: 8vh;
+}
+
+.hover_navBar{
+color: #A20012;
+font-weight: bold;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(./Fuentes/Montserrat-Regular.woff) format("woff");
+}
+@font-face {
+    font-family: "Numans";
+    src: url(./Fuentes/Numans-Regular.ttf) format("ttf");
+}
+@font-face {
+    font-family: "League_Gotic";
+    src: url(./Fuentes/LeagueGothic-Regular.ttf) ;
+}
+.home{ position: relative;
+}
+.inicio{
+    background-image: url(./Imagenes/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 114.5vh;
+    margin-top: -18vh;
+}
+.inicio2{
+    background-image: url(./Imagenes/FONDO2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 114.5vh;
+    margin-top: -114.5vh;
+    position: absolute;
+}
+.inicio3{
+    background-image: url(./Imagenes/FONDO3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 114.5vh;
+    margin-top: -114.5vh;
+    position: absolute;
+}
+
+.barra_Navegacion {
+    width: 100%;
+    height: 7vh;
+    background-color: #0A0F12;
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
+    z-index: 99999;
+    position: relative;
+    display: flex;              /* ← flex en el padre */
+    align-items: center;        /* centra verticalmente */
+    justify-content: flex-end;  /* empuja las secciones a la derecha */
+}
+
+.imagen_barrra {
+    width: 14vh;
+    height: 7vh;
+    margin-left: 3vw;
+    position: absolute;         /* sigue posicionada a la izquierda */
+    left: 0;
+    cursor: pointer;
+}
+
+.imagen_barrra :hover {
+transform: scale(1.1);
+transition: 0.2s;
+
+}
+
+.secciones_Barra {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(8px, 10vw, 100px);   /* gap que se achica con el viewport */
+    margin-right: 3vw;             /* ← margen derecho en vez de margin-left */
+    color: white;
+    font-size: clamp(12px, 1.2vw, 22px); /* ← se achica con el viewport */
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    overflow: hidden;              /* nunca desborda */
+}
+
+.secciones_Barra p {
+    transition: color 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;           /* evita que cada item se parta en dos líneas */
+}
+.secciones_Barra p:hover{
+color: #A20012;
+transition: 0.2s;
+}
+.inicio_content{
+    margin-left: 4vw;
+ margin-top: 50vh;
+ position: absolute;   
+}
+.inicio_titulo{
+    font-family: "League_Gotic";
+    font-weight: normal;
+    color: white;
+    font-size: 82px;
+    margin-right: 15vw;
+}
+.inicio_texto{
+    color: white;
+    font-size: 32px;
+    margin-top: -6vh;
+margin-right: 45vw;
+}
+.inicio_button{
+    margin-top: 4vh;
+    width: 14vw;
+    height: 7vh;
+    color: white;
+    background-color: #A20012;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
+    font-size: 38px;
+    font-family: "League_Gotic" ;
+    border-radius: 5%;
+    cursor: pointer;
+  border: none;
+  padding: 0;
+  border-radius: 3px;
+  clip-path: inset(0 round 3px);
+}
+.inicio_puntos{
+    position: absolute;
+    margin-left: 45vw;
+    margin-top: -21vh;
+}
+.inicio_puntos ul{
+    display: flex;
+    gap: 0.8vw;
+    color: #D9D9D9;
+}
+.puntos_caracterisitcas {
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    width: 1.25vw;
+    height: 2.5vh;
+    list-style: none;
+    cursor: pointer;
+}
+.quienessomos_home{
+    background-image: url(./Imagenes/Rectangle\ 16.png);
+    background-size: cover;
+    width: 101.4vw;
+    height: 73vh;
+    margin-left: -2.2vw;
+    margin-top: 3vh;
+}
+.Titulo_section2{
+    margin-left: 42vw;
+    font-family: "League_Gotic";
+    font-size: 76px;
+    font-weight: normal;
+}
+.texto_section2{
+    margin-left: 6.2vw;
+    margin-right: 2vw;
+    font-size: 34px;
+    text-align:left;
+    margin-top: 8vh;
+}
+.cta_section2{
+    cursor: pointer;
+    color: #A20012;
+    margin-left: 92vw;
+    font-size: 26px;
+    margin-top: 8vh;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+    font-weight: bold;
+    position: absolute;
+}
+.img_section2{
+    margin-left: 44vw;
+    margin-top: -7vh;
+}
+.titulo_Carrusel{
+    font-family: "League_Gotic";
+    font-size: 76px;
+    font-weight: normal;
+    margin-left: 4vw;
+    margin-top: 10vh;
+}
+.subtitulo_carrusel{
+    font-size: 34px;
+    margin-left: 4vw;
+    margin-top: -6vh;
+}
+.line{
+    background-color: black;
+    margin-left: 20vw;
+    width: 76vw;
+    height: 0.3vh;
+    border-radius: 20%;
+    position: absolute;
+    margin-top: -10vh;
+}
+.cardsContenedor_Carrusel{
+    width: 200vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    transition: transform 0.5s ease;
+}
+
+.imagenGuitarraAtras{
+    position: absolute;
+
+        max-width: 85%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(10px 4px 2px rgba(0,0,0,0.1));
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.posicion1{
+        margin-top: -7.4vh;
+    margin-right: 0.5vw;
+}
+.posicion2{
+        margin-top: -11.4vh;
+
+}
+.posicion3{
+        margin-top: -12.4vh;
+
+}
+
+.btn-arrowRotate {
+  width: 60px;
+  height: 60px;
+  background-color: #A20012; /* rojo */
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.9);
+  cursor: pointer;
+  position: absolute;
+  margin-left: 4vw;
+  z-index: 999;
+  margin-top: 30vh;
+
+}
+
+.btn-arrowRotate::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  transform: translate(-40%, -50%);
+  
+  width: 0;
+  height: 0;
+  border-right: 18px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+}
+
+.btn-arrowRotate:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+.btn-arrow {
+  width: 60px;
+  height: 60px;
+  background-color: #A20012; /* rojo */
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.9);
+  cursor: pointer;
+  position: absolute;
+  margin-left: 90vw;
+  z-index: 999;
+  margin-top: 30vh;
+}
+
+/* Flecha */
+.btn-arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.btn-arrow:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+
+.cards_Carrusel{
+    height: 100%;
+    width: 25vw;
+    background: linear-gradient(to bottom, #EAEAEA, #EAEAEA, #FFFFFF);
+    filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.1));
+    border-radius: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cards_Carrusel:hover{
+    filter: drop-shadow(0px 12px 5px rgba(0, 0, 0, 0.25));
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+.imagenGuitarra{
+    max-width: 85%;
+    height: auto;
+    display: block;
+    margin-top: -12vh;
+    filter: drop-shadow(10px 4px 2px rgba(0,0,0,0.1));
+    z-index: 1;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.elipse_Carrusel{
+    width: 6vw;
+    height: 2vw;
+    background-color: rgb(0, 0,0, 0.4);
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 50vh;
+    filter: blur(4px);
+    margin-bottom: 15vh;
+    z-index: -1;
+}
+.Titulo_card{
+    position: absolute;
+    margin-top: 47vh;
+    font-size: 1.2vw;
+}
+.Descripcion_cards{
+    position: absolute;
+        font-size: 0.8vw;
+        text-align: left;
+        color: #707070;
+        margin-top: 57vh;
+        margin-left: 1vw;
+        margin-right: 1vw;
+}
+.precio_Cards{
+    position: absolute;
+    margin-top: 67vh;
+    left: 1vw;
+    text-align: left;
+    font-size: 1vw;
+    color: #707070;
+}
+.cta_cards{
+    position: absolute;
+    right: 1vw;
+    text-align: right;
+    margin-top: 67vh;
+    color: #A20012;
+    cursor: pointer;
+}
+.titulo_Carrusel2{
+    font-family: "Montserrat";
+    font-size: 40px;
+    font-weight: normal;
+    margin-left: 4vw;
+    margin-top: 10vh;
+    font-weight: bold;
+}
+.line2{
+    background-color: black;
+    margin-left: 20vw;
+    width: 76vw;
+    height: 0.4vh;
+    border-radius: 10%;
+    position: absolute;
+    margin-top: -5vh;
+}
+.line3{
+        background-color: black;
+    margin-left: 4vw;
+    margin-right: 25vw;
+    width: 76vw;
+    height: 0.4vh;
+    border-radius: 10%;
+    position: absolute;
+    margin-top: 5vh;
+}
+.titulo_personalizar_Section{
+    font-family: "League_Gotic";
+    font-size: 76px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 4vw;
+
+}
+.texto_personalizar_Section{
+    font-size: 34px;
+    text-align:right;
+    margin-right: 4vw;
+    margin-top: -7vh;
+    font-weight: bold;
+}
+.personalizar_section{
+    margin-top: 20vh;
+    margin-bottom: 7vh;
+}
+.Seleccion_Personalizar{
+    width: 100%;
+    height: 72vh;
+    background-image: url(./Imagenes/Rectangle\ 17.png);
+background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+}
+.Card1 {
+    width: 38vw;
+    height: 100%;
+    background-image: none; /* ← sacás el background de acá */
+    background-size: cover;
+    margin-left: 4vw;
+    margin-top: -4vh;
+    border-radius: 1%;
+    clip-path: inset(0 round 3px);
+    position: relative;
+    cursor: pointer;
+    /* SIN filter acá */
+}
+
+
+.Card1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(./Imagenes/Bajobuilder.png);
+    background-size: cover;
+    z-index: 0;
+    transition: filter 0.4s ease;
+    border-radius: inherit; 
+}
+
+
+.Card1:hover::before {
+    filter: grayscale(1);
+}
+
+
+.Card1 > * {
+    position: relative;
+    z-index: 1;
+}
+.Card2{
+    width: 38vw;
+    height: 100%;
+    background-image: none;
+    margin-right: 4vw;
+    margin-top: -4vh;
+        background-size: cover;
+    position: relative;
+    clip-path: inset(0 round 2px);
+        cursor: pointer;
+
+}
+
+.Card2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(./Imagenes/Guitarbuilder.png);
+    background-size: cover;
+    z-index: 0;
+    transition: filter 0.4s ease;
+}
+.Card2:hover::before {
+    filter: grayscale(1);
+}
+.Card2 > * {
+    position: relative;
+    z-index: 1;
+}
+
+.background_texto{
+position: absolute;
+background: linear-gradient(to bottom, #F3F3F3 ,#7D7D7D,#000000);
+opacity: 28%;
+width: 99.9%;
+height: 99%;
+margin-left: 0.2vw;
+z-index: -2;
+position: absolute;
+}
+.bloqueBajos{
+    margin-top: 54vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    z-index: 99;
+}
+.texto_Bajos{
+    color: white;
+    font-weight:lighter;
+    font-size: 1.5vw;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.9);
+        z-index: 999;
+}
+.textos_BajosSub{
+    color:white;
+    margin-top: -3vh;
+    font-size: 0.8vw;
+    text-shadow: 2px 4px 1px rgba(0, 0, 0, 0.9);
+        z-index: 999;
+}
+.bloqueBajos button{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 999px; 
+    font-size: 1.2vw;
+    font-family: "League_Gotic";
+    cursor: pointer;
+    width: 10vw;
+    height: 5vh;
+    position: absolute;
+    margin-left: 23vw;
+    margin-top: -1.5vh;
+    filter: drop-shadow(5px 10px 5px rgba(0,0,0,0.1));
+        z-index: 999;
+    
+}
+.imagen_personalizar{
+width: 10%;
+height: 25%;
+margin-top: 20vh;
+}
+
+.imagenHover_Personalizar1{
+position: absolute;
+z-index:1;
+height: 60vh;
+margin-top: 11.1vh;
+margin-left: 5.5vw;
+
+}
+.imagenHover_Personalizar2{
+position: absolute;
+
+height: 42vh;
+margin-top: 15vh;
+margin-left: 6.8vw;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #0A0F12;
+position: relative;
+}
+.logo_footer{
+    position: absolute;
+    margin-left: 4vw;
+    margin-top: 5vh;
+    width: 20vh;
+}
+.footer_secciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5vw;
+    padding-top: 2vh;
+
+
+}
+.footer_secciones p{
+    color: white;
+    font-size: 26px;
+}
+.footer h6{
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    padding: 0%;
+}
+.titulo_contacto{
+    font-size: 32px;
+    margin-top: 1vh;
+}
+.iconos_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12vw;
+    margin-top: -5vh;
+    gap: 2vh;
+}
+.iconos_footer img{
+    width: 3vh;
+    height: 3vh;
+}
+.contenedor_textosFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15vh;
+}
+.contenedor_textosFooter p{
+    color: white;
+    font-size: 16px;
+    text-align: left;
+}
+.titulo_contacto2{
+    font-size: 32px;
+    position: absolute;
+    margin-left: 47vw;
+    margin-top: 30px;
+
+}
+.contenedor_redesFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    margin-top: 5vh;
+    height: 15vh;
+}
+.contenedor_redesFooter img{
+    max-width: 5vh;
+    max-height: 5vh;
+    
+}
+/*PANTALLA HISTORIA-------------------------*/
+
+.historia p{
+    font-size:clamp(18px, 2vw, 34px);
+    margin-left: 4vw;
+    position: absolute;
+}
+
+.titulo_historia{
+font-family: "League_Gotic";
+font-size:clamp(32px, 4vw, 76px);
+font-weight: normal;
+margin-left: 4vw;
+}
+.contenedorFondos{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+}
+
+.img1Fondo{
+    margin-top: -5vh;
+}
+.imgaenTaller1{
+width: 22vw;
+height: 33vh;
+position: absolute;
+margin-top: -115vh;
+margin-left: 43vw;
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+border-radius: 1%;
+  clip-path: inset(0 round 3px);
+
+}
+.imgaenTaller2{
+width: 20vw;
+height: 30vh;
+position: absolute;
+margin-top: -30vh;
+margin-left: 30vw;
+z-index: 2;
+border-radius: 1%;
+clip-path: inset(0 round 3px);
+}
+.imgaenTaller3{
+width: 30vw;
+height: 42vh;
+position: absolute;
+margin-top: -130vh;
+margin-left: 65vw;
+border-radius: 1%;
+clip-path: inset(0 round 3px);
+}
+.imgaenTaller4{
+width: 30vw;
+height: 80vh;
+position: absolute;
+margin-top: -73vh;
+margin-left: 65vw;
+border-radius: 1%;
+clip-path: inset(0 round 3px);
+filter:saturate(10%);
+}
+.imgaenTaller5{
+z-index: 1;
+width: 30vw;
+height: 45vh;
+position: absolute;
+margin-top: -65vh;
+margin-left: 4vw;
+filter: grayscale(100%);
+border-radius: 1%;
+clip-path: inset(0 round 3px);
+}
+
+.textoHistoria1{
+    margin-right: 4vw;
+}
+
+.textoHistoria2{
+margin-top: 30vh;
+margin-right: 60vw;
+}
+.textoHistoria3{
+margin-top: 78vh;
+margin-right: 25vw;
+}
+.textoHistoria4{
+    color: #707070;
+    margin-top: -40vh;
+font-size:clamp(18px, 0.5vw, 34px);
+     margin-left: 35vw;
+     position: absolute;
+     font-weight: normal;
+     text-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+     opacity: 80%;
+}
+.textoHistoria5{
+    margin-left: 4vw;
+    margin-top: -5vh;
+}
+.bottonHistoria{
+    margin-top: 5vh;
+    margin-left: 4vw;
+    width: 14vw;
+    height: 7vh;
+    color: white;
+    background-color: #A20012;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
+    font-size: 38px;
+    font-family: "League_Gotic" ;
+    border-radius: 5%;
+    cursor: pointer;
+  border: none;
+  padding: 0;
+  border-radius: 3px;
+  clip-path: inset(0 round 3px);
+  margin-bottom:15vh;
+}
+
+/*artistas---------------------------*/
+.artistas h1{
+font-family: "League_Gotic";
+font-size:clamp(32px, 4vw, 76px);
+font-weight: normal;
+text-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.artista_juani4{
+    width: 100%;
+    height: 96vh;
+}
+.artistas h2{
+font-family: "League_Gotic";
+font-size:clamp(32px, 4vw, 76px);
+font-weight: normal;
+text-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.artistas p{
+    font-size:clamp(18px, 2vw, 34px);
+
+}
+
+.titulo_artistas{
+    margin-left: 4vw;
+    margin-top: -15vh;
+}
+
+.img_Artistas{
+    position: absolute;
+}
+
+.subTitulo_artistas{
+    margin-right: 4vw;
+    text-align: right;
+    margin-top: -1vh;
+}
+
+.subTitulo_artistasP{
+margin-left: 40vw;
+}
+.textoArtistas1{
+    text-align: right;
+    margin-right: 4vw;
+    margin-left: 45vw;
+}
+.textoArtistas2{
+   margin-left: 40vw;
+   margin-right: 4vw; 
+}
+.img_sub1{
+    margin-top: -75vh;
+    margin-left: 4vw;
+    height: 70vh;
+}
+
+.artista_Chowy{
+    margin-top: 10vh;
+    width: 100%;
+    height: 110vh;
+}
+.titulo_artistas2{
+    margin-left: 4vw;
+
+}
+
+.subTitulo_artistas2{
+    margin-right: 4vw;
+
+}
+
+.textoArtistas3{
+    margin-left: 4vw;
+    margin-right: 50vw;
+}
+
+.subTitulo_artistasP2{
+    margin-left: 4vw;
+}
+
+.textoArtistas4{
+    margin-left: 4vw;
+    margin-right: 50vw;
+}
+
+.img_sub2{
+position: absolute;
+margin-top: -80vh;
+margin-left: 67vw;
+}
+
+.img_sub3{
+    position: absolute;
+    margin-top: -76vh;
+    margin-left: 56.5vw;
+}
+
+.artista_Rod{
+    margin-top: 10vh;
+    width: 100%;
+    height: 110vh;
+}
+
+.titulo_artistas3{
+    margin-left: 4vw;
+    margin-top: -10vh;
+}
+
+.subTitulo_artistasP3{
+text-align: right;
+margin-right: 45vw;
+}
+.textoArtistas5{
+    margin-left: 4vw;
+    margin-right: 50vw;
+}
+.textoArtistas6{
+text-align: right;
+    margin-right: 45vw;
+    margin-left: 4vw;
+}
+.img_sub3{
+    margin-left: 60vw;
+    margin-top: -69vh;
+    height: 68vh;
+}
+.img_sub4{
+    margin-left: 77vw;
+    margin-top: -20vh;
+
+    
+}
+
+.titulo_artistas4{
+    margin-left: 4vw;
+    margin-top: 30vh;
+
+}
+.texto_ArtistasColor{
+    color: #7B7575;
+
+}
+
+.contenedor_imgArtistas{
+    position: relative;
+    margin-left: 38.5vw;
+    width: 25vw;
+    margin-right: 38.5vw;
+    margin-top: 10vh;
+    height: 50vh;
+
+    margin-bottom: 5vh;
+}
+.masArtistasImg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.1));
+    border-radius: 1%;
+    clip-path: inset(0 round 3px);
+    transition: opacity 0.6s ease
+}
+/*=============================
+        INSTRUMENTOS
+===================================*/
+.instrumentos{
+    height: 360vh;
+}
+.backgroundInstrumento{
+    overflow: hidden;
+    position: relative;
+    background:linear-gradient(to bottom, #f5f4f4, #EAEAEA);
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 4vw;
+    margin-top: 10vh;
+    width: 100vw;
+    height:34vw;
+    border-radius: 3px;
+}
+.imgGrandeInstrumento{
+position: absolute;
+}
+.img1Instrumento{
+    position: absolute;
+    width: 20vw;
+    margin-left: 27vw;
+    margin-top: 4vh;
+    rotate: -2deg;
+    z-index: 2;
+}
+.img2Instrumento{
+    width: 20vw;
+    position: absolute;
+    margin-left: 45vw;
+    rotate: 2deg;
+    z-index: 2;
+}
+.sombraInstrumento{
+    width: 10vw;
+    height: 3vw;
+    background-color: rgb(0, 0,0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(4px);
+    margin-bottom: 15vh;
+    z-index: 1;
+    margin-top: 56vh;
+    margin-left: 50vw;
+}
+.sombraInstrumento2{
+    width: 10vw;
+    height: 3vw;
+    background-color: rgb(0, 0,0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(4px);
+    margin-bottom: 15vh;
+    z-index: 1;
+    margin-top: 56vh;
+    margin-left: 32vw;
+}
+
+.contenedorInstrumentos{
+    display: flex;
+    flex-direction: row;
+gap: 2vw;
+
+
+}
+.caracteristicasContenedor{
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 10vh;
+    margin-right: 4vw;
+    border-radius: 1%;
+    clip-path: inset(0 round 3px);
+    padding-bottom: 7vh;
+
+}
+.caracteristicasContenedor h3{
+font-size: clamp(18px, 2.5vw, 34px);
+font-weight: bold;
+margin-top: 0vh;
+}
+.caracteristicasContenedor h5{
+font-size: clamp(12px, 1vw, 22px);
+font-weight: bolder;
+color: #7B7575;
+margin-top: 0vh;
+
+}
+.caracteristicasContenedor p{
+font-size: clamp(12px, 0.8vw, 22px);
+font-weight:500;
+color: #000000;
+margin-top: -1vh;
+margin-bottom: 5vh;
+}
+.caracteristicasContenedor li{
+font-size: clamp(12px, 0.8vw, 22px);
+font-weight:500;
+color: #000000;
+margin-left: -1vw;
+}
+.caracteristicasContenedor ul{
+display: flex;
+flex-wrap: wrap;
+justify-content:space-between;
+gap: 1vw;
+}
+
+.botonInstrumentos{
+position: absolute;
+left: 50%;
+bottom: 0vh;
+transform: translateX(-50%);
+display: block;
+color: white;
+background-color: #A20012;
+filter: drop-shadow(6px 6px px rgba(0, 0, 0, 0.9));
+font-size: clamp(20px, 2vw, 38px);
+font-family: "League_Gotic" ;
+cursor: pointer;
+border: none;
+padding: 0;
+border-radius: 3px;
+clip-path: inset(0 round 3px); 
+width: 95%;
+height: clamp(42px, 3vw, 62px);
+z-index: 2;
+
+}
+.especificacionesInstrumentos{
+    width: 68.5vw;
+    height: 50vh;
+    /*background-color:#A20012;*/
+    margin-left: 4vw;
+}
+.contenedorEspecificaciones{
+    margin-top: 10vh;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 35vw;
+    row-gap: 5vh;
+}
+.contenedorEspecificaciones img{
+    width: 3vw;
+    height: 6vh;
+}
+.textoContenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 16vw;
+    row-gap: 6vh;
+    margin-top: -10vh;
+    margin-left: 4vw;
+}
+.textoContenedor p{
+font-size: clamp(12px, 0.85vw, 22px);
+}
+.contenedorEspecificaiones2{
+    width: 100%;
+    height: 30vh;
+    margin-top: 10vh;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    clip-path: inset(0 round 6px);
+}
+.contenedorEspecificaiones2 h6{
+    font-size: clamp(12px, 4vw, 28px);
+    font-weight: bold;
+    margin-left: 1vw;
+    padding-top: 1vh;
+}
+.CaracteristicasContenedorInstrumento{
+    display: flex;
+    flex-direction: row;
+    gap: 20vw;
+    align-items: start;
+    margin-left: 1vw;
+}
+.CaracteristicasContenedorInstrumento h7{
+    font-size: clamp(12px, 1vw, 24px);
+    font-weight: bold;
+    color: #7B7575;
+    text-shadow: 2px 0px 6px rgba(0, 0, 0, 0.2);
+}
+.caracteristicasTextoInstrumento{
+    display: flex;
+    flex-direction: row;
+    gap: 14.4vw;
+    align-items: start;
+    text-align: left;
+    font-weight: 500;
+    margin-left: 1vw;
+}
+.tituloInstrumentosCarrusel{
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+.instrumentosBarra{
+    height: 200vh;
+}
